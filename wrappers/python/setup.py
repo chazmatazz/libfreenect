@@ -2,6 +2,7 @@
 from distutils.core import setup
 from distutils.extension import Extension
 from Cython.Distutils import build_ext
+import numpy as np
 
 ext_modules = [Extension("freenect", ["freenect.pyx"],
                          libraries=['usb-1.0', 'freenect', 'freenect_sync'],
@@ -14,5 +15,6 @@ ext_modules = [Extension("freenect", ["freenect.pyx"],
 setup(
   name = 'freenect',
   cmdclass = {'build_ext': build_ext},
+  include_dirs = [np.get_include()], 
   ext_modules = ext_modules
 )

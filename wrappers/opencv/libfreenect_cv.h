@@ -5,7 +5,7 @@
 extern "C" {
 #endif
 
-#include <opencv/cv.h>
+#include "opencv2/core/core.hpp"
 
 	IplImage *freenect_sync_get_depth_cv(int index);
 	IplImage *freenect_sync_get_rgb_cv(int index);
